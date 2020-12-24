@@ -16,14 +16,13 @@ def init_logger():
                         )
 
 
-def main():
+def sdk_check_test():
+
     init_logger()
-
     os.chdir("/rt-thread/sdk-index/tools/sdk_check")
-
     logging.info(execute_command("apt-get update && apt-get -y upgrade"))
     logging.info(execute_command("python -m pip install --upgrade pip"))
-    logging.info(execute_command("pip install pytest pytest-sugar pytest-html rt-thread-studio"))
+    logging.info(execute_command("pip install pytest-sugar pytest-html"))
 
     # get oss package
     execute_command(
@@ -64,4 +63,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sdk_check_test()

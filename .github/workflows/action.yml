@@ -64,7 +64,7 @@ jobs:
           run: |
             cd ${{ github.workspace }}
             docker pull realthread/sdk_index:latest
-            docker run -v "`pwd`:/rt-thread/sdk-index" -i realthread/sdk_index:latest bash -c ". /etc/profile && python3 /rt-thread/sdk-index/tools/sdk_check/__main__.py"
+            docker run -v "`pwd`:/rt-thread/sdk-index" -i realthread/sdk_index:latest bash -c ". /etc/profile && python /rt-thread/sdk-index/tools/sdk_check_tools.py"
             cd ${{ github.workspace }}/tools/sdk_check && python check_report.py
             
         - name: Upload Results
