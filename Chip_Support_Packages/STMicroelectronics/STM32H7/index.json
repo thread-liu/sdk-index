@@ -18,6 +18,13 @@
             "description": "released v0.1.7",
             "size": "163 MB",
             "url": "https://github.com/RT-Thread-Studio/sdk-csp-stm32h7/archive/0.1.7.zip"
+        },
+        {
+            "version": "0.2.1",
+            "date": "2020-05-25",
+            "description": "released v0.1.7",
+            "size": "163 MB",
+            "url": "https://github.com/thread-liu/sdk-csp-stm32h7/archive/0.2.1.zip"
         }
     ]
 }

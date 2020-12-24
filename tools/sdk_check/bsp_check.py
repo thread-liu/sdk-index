@@ -3,11 +3,11 @@ import sys
 import json
 import logging
 import subprocess
-from check_tools import execute_command
-from check_tools import do_copy_file
-from check_tools import do_copy_folder
-from gen_bsp_json import gen_bsp_sdk_json
-from gen_test_case import gen_sdk_test_case
+from .check_tools import execute_command
+from .check_tools import do_copy_file
+from .check_tools import do_copy_folder
+from .gen_bsp_json import gen_bsp_sdk_json
+from .gen_test_case import gen_sdk_test_case
 
 
 def exec_bsp_test_case():

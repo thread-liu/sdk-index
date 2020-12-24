@@ -2,7 +2,7 @@
 import os
 import time
 import pytest
-from check_tools import execute_command
+from .check_tools import execute_command
 
 
 def exec_test_case():

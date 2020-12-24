@@ -2,9 +2,8 @@ import os
 import json
 import logging
 from pathlib import Path
-from check_tools import execute_command
+from .check_tools import execute_command
 from rt_thread_studio import bsp_parser
-from rt_thread_studio import bsp_checker
 
 
 class SdkIndex(object):

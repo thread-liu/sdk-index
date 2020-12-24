@@ -8,7 +8,7 @@ import logging
 import textwrap
 import subprocess
 from pathlib import Path
-from check_tools import execute_command
+from .check_tools import execute_command
 
 
 def gen_sdk_test_case(json_path, mcu_config_path):

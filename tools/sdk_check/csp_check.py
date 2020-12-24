@@ -3,10 +3,9 @@ import sys
 import json
 import logging
 import subprocess
-from gen_csp_json import gen_sdk_para_json_file
-from gen_test_case import gen_sdk_test_case
-from check_tools import execute_command
-
+from .gen_csp_json import gen_sdk_para_json_file
+from .gen_test_case import gen_sdk_test_case
+from .check_tools import execute_command
 
 
 def get_rt_thread_source_code():
