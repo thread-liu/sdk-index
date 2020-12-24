@@ -31,9 +31,9 @@ jobs:
             sudo apt-get install python3-pip python3-setuptools python3-wheel -y
             pip install requests wheel jsonschema
 
-        - name: Config Github SSH
+        - name: Config Git SSH
           shell: bash
-          if: ${{ github.ref == 'refs/heads/master' }}  
+          if: github.repository == 'RT-Thread-Studio/sdk-index' && github.ref == 'refs/heads/master'
           env:
             GITEE_PRIVATE_KEY: ${{ secrets.SSH_SECRET_GITEE }}
           run: |
@@ -60,7 +60,7 @@ jobs:
 
         - name: Generate-Import-Compile
           shell: bash
-          if: ${{ github.ref != 'refs/heads/master' && success() }}
+          if: github.repository == 'RT-Thread-Studio/sdk-index' && github.ref == 'refs/heads/master' && success()
           run: |
             cd ${{ github.workspace }}
             docker pull realthread/sdk_index:latest
@@ -68,10 +68,9 @@ jobs:
             cd ${{ github.workspace }}/tools/sdk_check && python check_report.py
             
         - name: Upload Results
-          if: ${{ github.ref != 'refs/heads/master' && success() }}
+          if: github.repository == 'RT-Thread-Studio/sdk-index' && github.ref == 'refs/heads/master'
           uses: actions/upload-artifact@v2
           continue-on-error: True
           with:
             name: check-report
             path: ${{ github.workspace }}/tools/sdk_check/report.html
-
