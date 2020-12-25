@@ -68,7 +68,7 @@ jobs:
             cd ${{ github.workspace }}/tools/sdk_check && python check_report.py
             
         - name: Upload Results
-          if: github.repository == 'RT-Thread-Studio/sdk-index' && github.ref == 'refs/heads/master'
+          if: github.repository != 'RT-Thread-Studio/sdk-index'
           uses: actions/upload-artifact@v2
           continue-on-error: True
           with:
